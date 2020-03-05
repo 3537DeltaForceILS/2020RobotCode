@@ -23,6 +23,9 @@ import frc.robot.subsystems.FeederSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.subsystems.LifterSubsystem;
+
+//import org.graalvm.compiler.phases.schedule.SchedulePhase;
+
 //import org.graalvm.compiler.debug.TimeSource;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.cameraserver.CameraServer;
@@ -111,6 +114,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    autonomousCommand = oi.AutonDriveCommand;
     //autonomousCommand = chooser.getSelected();
  
    //driveTimeoutCommand.start();
@@ -123,7 +127,7 @@ public class Robot extends TimedRobot {
  
     // schedule the autonomous command (example)
     if (autonomousCommand != null) {
-     autonomousCommand.start();
+     
     }
   }
  
